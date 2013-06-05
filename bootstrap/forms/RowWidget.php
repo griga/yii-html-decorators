@@ -6,9 +6,10 @@
 class RowWidget extends CWidget {
 	public $label = '';
 	public $for = '';
+	public $well = false;
 	public function init()
 	{
-		echo CHtml::openTag('div', array('class' => 'control-group'));
+		echo CHtml::openTag('div', array('class' => 'control-group' . ($this->well ? ' well' : '') ));
 		echo CHtml::label($this->label, $this->for, array('class' => 'control-label'));
 		echo CHtml::openTag('div', array('class' => 'controls'));
 	}
